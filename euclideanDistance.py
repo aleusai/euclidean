@@ -10,7 +10,7 @@ import cProfile
 import numpy as np
 import array 
 import os
-from itertools import zip_longest
+
 
 #Notice: all the relevant packages have been installed with pip
 #Logging not needed, used to replace print statements
