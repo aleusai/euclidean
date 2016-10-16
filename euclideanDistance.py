@@ -43,7 +43,7 @@ def main():
     #    print(ar1)
 
     #I create a numpy array for performance reasons
-    ar=np.array(ar1)
+    ar=np.array(ar1).astype(float)
     #I slice the array to separate the x and y coordinates (x.shape and y.shape must
     #be identical!
     x1=ar[::2]
