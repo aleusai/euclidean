@@ -36,36 +36,32 @@ def main():
     ar1=array.array('h')
     #fromfile, as struct.unpack is not fast enough
     ar1.fromfile(open(fn,'rb'),int(os.path.getsize(fn)/ar1.itemsize))
-    #To get the correct indian we biteswap
+    #To get the correct indian we byteswap
     ar1.byteswap()
     
-    #for j in ar1:
-    #    print(ar1)
 
     #I create a numpy array for performance reasons
     ar=np.array(ar1).astype(float)
     #I slice the array to separate the x and y coordinates (x.shape and y.shape must
-    #be identical!
+    #be identical!)
     x1=ar[::2]
     y1=ar[1::2]
     #We convert to numpy arrays and work with them only
     x=np.array(x1)
     y=np.array(y1)
-    #for i,j in zip(x ,y):
-    #    print(i,j) 
-    #os._exit(0) 
+
     #Validation test:
     #x=np.array([30,20,10,5,-1,-2,-3,-4,-5,-6,-7,-8,-10,-20,-30,-40,-50,-60,-70,-80,-90,-100,-110,-120,-130,-140,-150])
     #y=np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
     
     #Euclidean distance calculation (throughout the whole array)
-    #Firs point (-200,300)
+    #First point (-200,300)
     q1=np.subtract(x,-200.0)
     q2=np.subtract(y,300.0)
-    #We squared the result
+    #We square the result
     z1=np.square(q1)
     z2=np.square(q2)
-    #I calculate the distance. We don't sqrt as not needed for the comparisons. 
+    #I calculate the distance. We don't sqrt as not needed for the comparison. 
     dist1=np.add(z1,z2)
     
     #Second point (1000,25)
@@ -75,7 +71,7 @@ def main():
     w2=np.square(t2)
     dist2=np.add(w1,w2)
     
-    #We need to put together the x and y arrays together with the distances to the 
+    #We need to put together the x and y arrays with the distances to the 
     #two points, so as to sort on the distance column
     array_el=np.column_stack((x,y))
     array_1=np.column_stack((dist1,array_el)) 
