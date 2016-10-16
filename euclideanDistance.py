@@ -40,13 +40,12 @@ def main():
     ar1.byteswap()
     
 
-    #I create a numpy array for performance reasons
+    #We create a numpy array for performance reasons
     ar=np.array(ar1).astype(float)
     #I slice the array to separate the x and y coordinates (x.shape and y.shape must
     #be identical!)
     x1=ar[::2]
     y1=ar[1::2]
-    #We convert to numpy arrays and work with them only
     x=np.array(x1)
     y=np.array(y1)
 
