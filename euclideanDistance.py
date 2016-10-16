@@ -60,11 +60,9 @@ def main():
     
     #Euclidean distance calculation (throughout the whole array)
     #Firs point (-200,300)
-    #In the subtraction we convert to float (-200.0). This is important as otherwise we get 
-    #the wrong answer as te array contains signed ints!
     q1=np.subtract(x,-200.0)
     q2=np.subtract(y,300.0)
-    #We squared the result, being careful in not casting to a too small type)
+    #We squared the result
     z1=np.square(q1)
     z2=np.square(q2)
     #I calculate the distance. We don't sqrt as not needed for the comparisons. 
